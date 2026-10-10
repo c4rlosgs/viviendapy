@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#12372a">
+<meta name="description" content="ViviendaPY reúne búsquedas inmobiliarias de Paraguay en un solo portal.">
+<title>ViviendaPY — Agregador inmobiliario de Paraguay</title>
+<style>
+:root{--g:#12372a;--g2:#1c5b43;--mint:#e7f2eb;--paper:#f6f8f5;--ink:#17221c;--muted:#65736a;--line:#dce5de;--gold:#fff4d8}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:inherit}.wrap{width:min(1160px,calc(100% - 28px));margin:auto}.top{background:var(--g);color:white}.nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{font-weight:900;font-size:1.4rem;letter-spacing:-.04em;text-decoration:none}.brand span{color:#a9d5b8}.nav small{color:#dce9e0}.hero{background:linear-gradient(120deg,#12372a,#28684d);color:white;padding:45px 0 35px}.hero-grid{display:grid;grid-template-columns:1fr .95fr;gap:30px;align-items:center}.pill{display:inline-block;border:1px solid #ffffff40;background:#ffffff15;border-radius:999px;padding:5px 10px;font-size:.78rem}.hero h1{font-size:clamp(2.2rem,5vw,3.5rem);line-height:1.04;letter-spacing:-.055em;margin:17px 0 12px}.hero p{max-width:620px;color:#e0eee5}.checks{display:flex;gap:12px;flex-wrap:wrap;font-size:.88rem}.search{background:white;color:var(--ink);padding:21px;border-radius:20px;box-shadow:0 20px 50px #001a0e33}.search h2{margin:0 0 15px;font-size:1.15rem}.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:5px}.field.full{grid-column:1/-1}label{font-size:.82rem;font-weight:750;color:#4e5e54}input,select{width:100%;border:1px solid var(--line);border-radius:10px;padding:11px;background:white;font:inherit;color:var(--ink)}button,.btn{border:0;border-radius:11px;padding:12px 16px;background:var(--g2);color:white;font:inherit;font-weight:800;cursor:pointer;text-decoration:none;display:inline-block}.search button{grid-column:1/-1}.section{padding:30px 0}.head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:15px}.head h2{margin:0;font-size:1.6rem;letter-spacing:-.03em}.muted{color:var(--muted);font-size:.9rem}.state{padding:12px 15px;border-radius:12px;background:#eef2ee;color:#4c5c52;margin:12px 0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.card{background:white;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 8px 24px #12372a0b;min-width:0}.photo{height:185px;background:#e5ece6;display:flex;align-items:center;justify-content:center;overflow:hidden;color:#6c7a70}.photo img{width:100%;height:100%;object-fit:cover}.content{padding:15px}.type{font-size:.75rem;font-weight:800;color:var(--g2);text-transform:uppercase;letter-spacing:.04em}.price{font-size:1.3rem;font-weight:900;margin:6px 0}.facts{font-size:.87rem;color:var(--muted);margin:7px 0 12px}.source{display:flex;justify-content:space-between;align-items:center;gap:8px;border-top:1px solid var(--line);padding-top:10px;font-size:.78rem;color:var(--muted)}.source a{color:var(--g2);font-weight:800}.badge{display:inline-block;border-radius:999px;padding:4px 8px;font-size:.74rem;font-weight:800;background:var(--mint);color:var(--g2)}.badge.pending{background:var(--gold);color:#76550a}.sources{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.sourcecard{background:white;border:1px solid var(--line);border-radius:14px;padding:16px}.sourcecard h3{margin:7px 0 5px}.note{background:#fff8e8;border-left:4px solid #d6a43b;padding:15px;border-radius:8px;color:#5d4a22;margin-top:16px}.empty{background:white;border:1px dashed #bfcfc2;border-radius:14px;padding:28px;text-align:center;color:var(--muted);grid-column:1/-1}.foot{padding:22px 0;background:#eaf0eb;color:var(--muted);font-size:.86rem;margin-top:25px}.hide{display:none!important}
+@media(max-width:850px){.hero-grid{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.sources{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.hero{padding:30px 0}.fields{grid-template-columns:1fr}.field.full{grid-column:auto}.grid,.sources{grid-template-columns:1fr}.photo{height:210px}.head{align-items:start;flex-direction:column}.nav small{display:none}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap nav"><a class="brand" href="#">Vivienda<span>PY</span></a><small>Un solo buscador inmobiliario para Paraguay</small><a class="btn" href="#fuentes" style="background:#fff;color:var(--g)">Fuentes</a></div></header>
+<main>
+<section class="hero"><div class="wrap hero-grid">
+<div><span class="pill">BETA · Agregación en desarrollo</span><h1>Busca vivienda en Paraguay. Sin saltar de portal en portal.</h1><p>Un buscador para explorar propiedades, comparar información y abrir el anuncio original. Solo mostramos resultados recibidos de la fuente conectada; no inventamos anuncios.</p><div class="checks"><span>✓ Castellano</span><span>✓ Alquiler y compra</span><span>✓ Deduplicación básica</span></div></div>
+<form id="searchForm" class="search"><h2>Encuentra una propiedad</h2><div class="fields">
+<div class="field full"><label for="q">Zona o palabra clave</label><input id="q" placeholder="Asunción, Luque, Villa Morra…"></div>
+<div class="field"><label for="operation">Operación</label><select id="operation"><option value="rent">Alquiler</option><option value="sale">Compra</option></select></div>
+<div class="field"><label for="type">Tipo de propiedad</label><select id="type"><option value="">Todos</option><option value="apartment">Apartamento</option><option value="house">Casa</option><option value="land">Terreno</option><option value="commercial">Local / comercial</option></select></div>
+<div class="field"><label for="currency">Moneda</label><select id="currency"><option value="">Cualquiera</option><option value="USD">Dólares (USD)</option><option value="PYG">Guaraníes (PYG)</option></select></div>
+<div class="field"><label for="maxPrice">Precio máximo</label><input id="maxPrice" type="number" min="0" placeholder="Sin límite"></div>
+<button type="submit">Buscar propiedades →</button>
+</div></form>
+</div></section>
+<section class="section wrap"><div class="head"><div><h2>Propiedades encontradas</h2><div class="muted">Se muestran resultados de la fuente realmente conectada.</div></div><span id="count" class="badge">Preparando búsqueda…</span></div>
+<div id="state" class="state" role="status">Intentando conectar con la fuente inmobiliaria…</div><div id="results" class="grid"></div><div style="display:flex;justify-content:center;margin-top:18px"><button id="more" class="hide" type="button">Cargar más</button></div>
+<div class="note"><strong>Importante:</strong> esta beta consulta Tu Lugar directamente desde el navegador. Si la API bloquea peticiones entre dominios (CORS), habrá que ejecutarla con el servidor intermediario incluido en el proyecto. La deduplicación funciona sobre los resultados recibidos en esta sesión; aún no es una deduplicación global persistente entre todos los portales.</div>
+</section>
+<section id="fuentes" class="section wrap"><div class="head"><div><h2>Fuentes del mercado</h2><div class="muted">Estado honesto de cada integración.</div></div></div><div class="sources">
+<article class="sourcecard"><span class="badge">Conector beta</span><h3>Tu Lugar</h3><p class="muted">La interfaz intenta consultar su API de lectura documentada y enlaza al anuncio original.</p><a href="https://tulugar.com/es/api-docs" target="_blank" rel="noopener noreferrer">Documentación API ↗</a></article>
+<article class="sourcecard"><span class="badge pending">Pendiente de acuerdo</span><h3>InfoCasas Paraguay</h3><p class="muted">No conectado. Hace falta confirmar API/feed y permiso para reutilizar los datos.</p><a href="https://www.infocasas.com.py/" target="_blank" rel="noopener noreferrer">Abrir portal ↗</a></article>
+<article class="sourcecard"><span class="badge pending">Pendiente de acuerdo</span><h3>Clasipar</h3><p class="muted">No conectado. Se necesita un método autorizado de importación.</p><a href="https://clasipar.paraguay.com/" target="_blank" rel="noopener noreferrer">Abrir portal ↗</a></article>
+<article class="sourcecard"><span class="badge pending">Validar condiciones</span><h3>Mercado Libre Inmuebles</h3><p class="muted">No conectado. Usar solo los endpoints y datos permitidos por sus términos y permisos de API.</p><a href="https://developers.mercadolibre.com.py/es_ar/terminos-y-condiciones" target="_blank" rel="noopener noreferrer">Términos API ↗</a></article>
+<article class="sourcecard"><span class="badge pending">Pendiente de acuerdo</span><h3>Encuentra24</h3><p class="muted">No conectado. No se ha confirmado un feed autorizado para este proyecto.</p><a href="https://www.encuentra24.com/paraguay-es/bienes-raices" target="_blank" rel="noopener noreferrer">Abrir portal ↗</a></article>
+<article class="sourcecard"><span class="badge pending">Vía recomendada</span><h3>Inmobiliarias y desarrolladoras</h3><p class="muted">Importación mediante feeds CSV/XML o integraciones de CRM acordadas directamente.</p></article>
+</div></section>
+</main><footer class="foot"><div class="wrap">ViviendaPY · Beta de agregador · Confirma disponibilidad, gastos y condiciones con el anunciante original.</div></footer>
+<script>
+"use strict";
+const API="https://tulugar.com/api/v1", LIMIT=18;
+let offset=0, currentCards=new Map();
+const $=id=>document.getElementById(id);
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function money(v,c){if(v==null||v==="")return "Consultar precio";try{return new Intl.NumberFormat("es-PY",{style:"currency",currency:c||"PYG",maximumFractionDigits:0}).format(v)}catch{return `${v} ${c||""}`}}
+function canonicalURL(p){let u=p.url||p.public_url||p.canonical_url||p.link||"";try{const x=new URL(u);x.hash="";["utm_source","utm_medium","utm_campaign","fbclid"].forEach(k=>x.searchParams.delete(k));return x.toString().replace(/\/$/,"")}catch{return String(u).trim().replace(/\/$/,"")}}
+function norm(s){return String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim()}
+function dedupeKey(p){
+ const url=canonicalURL(p); if(url)return "url:"+url.toLowerCase();
+ const loc=norm([p.neighborhood,p.city,p.address].filter(Boolean).join(" "));
+ const title=norm(p.title);const type=norm(p.property_type);
+ const area=Number(p.area_sqm)||0, beds=p.bedrooms??"", price=Number(p.price)||0, currency=norm(p.currency);
+ if(loc && (title||area||price))return ["fallback",loc,title,type,area,beds,price,currency].join("|");
+ return "id:"+(p.id??p.listing_id??JSON.stringify(p));
+}
+function listingURL(p){const u=canonicalURL(p);if(u)return u;return p.slug?`https://tulugar.com/es/propiedad/${encodeURIComponent(p.slug)}`:"https://tulugar.com/es/paraguay"}
+function card(p){
+ const img=Array.isArray(p.images)?(typeof p.images[0]==="string"?p.images[0]:p.images[0]?.url):p.image_url||p.image||"";
+ const city=[p.neighborhood,p.city].filter(Boolean).join(", ");
+ const op=p.listing_type==="rent"?"Alquiler":p.listing_type==="sale"?"Venta":"Propiedad";
+ const facts=[p.bedrooms!=null?`${p.bedrooms} hab.`:"",p.bathrooms!=null?`${p.bathrooms} baños`:"",p.area_sqm?`${p.area_sqm} m²`:""].filter(Boolean).join(" · ");
+ const safeImg=typeof img==="string"&&/^https:\/\//i.test(img)?`<img loading="lazy" src="${esc(img)}" alt="Fotografía de la propiedad" onerror="this.remove()">`:"Imagen no disponible";
+ return `<article class="card"><div class="photo">${safeImg}</div><div class="content"><span class="type">${esc(op)} · ${esc(p.property_type||"Propiedad")}</span><div class="price">${money(p.price,p.currency)}${p.listing_type==="rent"?' <small style="font-size:.72rem;font-weight:600">/ mes si aplica</small>':""}</div><strong>${esc(p.title||"Propiedad en Paraguay")}</strong><div class="facts">${esc(city||"Paraguay")}${facts?" · "+esc(facts):""}</div><div class="source"><span>Fuente: Tu Lugar</span><a href="${esc(listingURL(p))}" target="_blank" rel="noopener noreferrer">Anuncio original ↗</a></div></div></article>`;
+}
+function mergeAndDedupe(items){
+ const groups=new Map();
+ for(const p of items){
+  const key=dedupeKey(p);
+  if(!groups.has(key)){groups.set(key,{...p,_sources:["Tu Lugar"],_duplicateCount:1});continue;}
+  const old=groups.get(key);old._duplicateCount++;
+  // Prefer the record with more populated fields, retaining the original-source trace.
+  const score=x=>Object.values(x).filter(v=>v!==null&&v!==undefined&&v!=="").length;
+  if(score(p)>score(old)){const count=old._duplicateCount;groups.set(key,{...old,...p,_sources:[...new Set([...(old._sources||[]),"Tu Lugar"])],_duplicateCount:count});}
+ }
+ return [...groups.values()];
+}
+async function search(reset=true){
+ if(reset){offset=0;currentCards.clear();$("results").innerHTML="";$("more").classList.add("hide")}
+ $("state").textContent="Consultando anuncios de Tu Lugar…";$("count").textContent="Cargando";
+ const params=new URLSearchParams({country:"Paraguay",listing_type:$("operation").value,locale:"es",limit:String(LIMIT),offset:String(offset)});
+ const q=$("q").value.trim(),type=$("type").value,cur=$("currency").value,max=$("maxPrice").value;
+ if(q)params.set("q",q);if(type)params.set("property_type",type);if(cur)params.set("currency",cur);if(max)params.set("max_price",max);
+ try{
+  const res=await fetch(`${API}/listings?${params}`,{headers:{Accept:"application/json"}});
+  if(!res.ok)throw new Error(res.status===429?"La fuente ha limitado temporalmente las consultas.":`La API respondió con estado ${res.status}.`);
+  const json=await res.json();const data=Array.isArray(json.data)?json.data:[];
+  const clean=mergeAndDedupe(data);
+  clean.forEach(p=>currentCards.set(dedupeKey(p),p));
+  const existing=[...currentCards.values()];
+  $("results").innerHTML=existing.map(card).join("");
+  const total=json.pagination?.total;
+  $("count").textContent=`${existing.length} fichas sin duplicados`;
+  $("state").textContent=data.length?`Respuesta recibida de Tu Lugar: ${data.length} anuncios en esta página, ${clean.length} fichas tras quitar duplicados exactos. La deduplicación global entre portales aún no está activa.`:"La fuente no ha devuelto anuncios con estos filtros. Prueba otra búsqueda.";
+  $("more").classList.toggle("hide",!data.length||(total!=null&&offset+data.length>=total)||data.length<LIMIT);
+  offset+=data.length;
+ }catch(err){
+  $("count").textContent="Sin conexión";$("state").textContent=`No se pudo consultar la API desde este navegador: ${err.message}`;
+  if(!currentCards.size)$("results").innerHTML=`<div class="empty">No se han mostrado anuncios inventados. Puede que la API bloquee peticiones desde archivos locales o requiera el servidor intermediario. Puedes revisar <a href="https://tulugar.com/es/api-docs" target="_blank" rel="noopener noreferrer">la documentación de Tu Lugar</a> o abrir el portal directamente.</div>`;
+ }
+}
+$("searchForm").addEventListener("submit",e=>{e.preventDefault();search(true)});
+$("more").addEventListener("click",()=>search(false));
+search(true);
+</script>
+</body></html>
